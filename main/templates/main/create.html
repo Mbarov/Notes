@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Создание заметки
+{% endblock %}
+
+
+{% block content %}
+
+
+
+
+<h1 class='text-center pt-4 pb-5'>Создание заметки</h1>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+<form method="post">
+{% csrf_token %}
+{{form}}<br>
+<button type='submit' class='btn btn-primary'>Добавить</button>
+</form>
+    </div>
+    <div class="col-1"></div>
+    </div>
+
+
+<span>{{error}}</span>
+
+
+{% endblock %}

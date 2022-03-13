@@ -1,0 +1,17 @@
+a:hover{
+    background-color: #504f4f !important;   
+}
+
+#navbar{
+    text-align: center;
+    display: block;
+}
+button{
+    background-color:rgb(185, 96, 7) !important;
+    float:center;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+button:hover {
+    background-color: #504f4f !important;   
+}

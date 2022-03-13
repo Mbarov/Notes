@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Список заметок
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<h5 class='text-center'> Список заметок </h5>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+    {% if notes %}
+    {% for note in notes %}
+        <div class='alert alert-warning mt-3 notes'> 
+            <p>Текст:{{note.full_text}}</p>
+            <p>Дата создания: {{note.date}}</p>
+            <a href="{% url 'remove' note_id=note.id %}">
+                <button type='button' class='btn button'>
+                    Удалить заметку
+                </button>
+            </a>
+        </div>
+
+    {% endfor %}
+    
+    {% else %}
+        <div class='alert alert-warning mt-2'><p>У вас нет записей!</p></div>
+    {% endif %}
+</div>
+<div class="col-1"></div>
+
+</div>
+
+
+{% endblock %}

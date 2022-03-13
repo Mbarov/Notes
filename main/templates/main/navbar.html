@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-md navbar-light bg-warning mb-5">
+
+    <div id='navbar' class='collapse navbar-collapse justify-content-center'>
+      <ul class='navbar-nav'>
+      
+        <li class='nav-item'>
+          <a class='nav-link  text-uppercase font-weight-bold px-3' href="{% url 'home' %}" >
+            <b>На главную</b>
+          </a>
+        </li>
+
+
+        {% if request.user.is_authenticated  %} 
+      
+
+              <li class='nav-item'>
+                <a class='nav-link  text-uppercase font-weight-bold px-5' href="{% url 'notes_list' %}">
+                  <b>Список заметок</b>
+                </a>
+              </li>
+
+              <li class='nav-item'>
+                <a class='nav-link  text-uppercase font-weight-bold px-5' href="{% url 'create' %}">
+                  <b>Добавить заметку</b>
+                </a>
+              </li>
+
+              <li class='nav-item'>
+                <a class='nav-link  text-uppercase font-weight-bold px-5' href="{% url 'logout' %}">
+                  <b>Выйти из аккаунта!</b>
+                </a>
+              </li>     
+
+        {% else %} <!--если пользователь не залогинен-->
+
+              <li class='nav-item'>
+                <a class='nav-link  text-uppercase font-weight-bold px-5 ' href="{% url 'signup' %}" >
+                  <b>Регистрация</b>
+                </a>
+              </li>     
+
+              <li class='nav-item'>
+                <a class='nav-link  text-uppercase font-weight-bold px-5' href="{% url 'login' %}" >
+                  <b>Авторизация</b>
+                </a>
+              </li>
+
+        {% endif %}
+
+    </div>
+</nav> 
